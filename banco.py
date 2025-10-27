@@ -29,7 +29,7 @@ class Banco:
         conta = self.procurar_conta(numero)
         if conta:
             conta.saldo += valor
-            print(f'Crédito de R$ {valor:.2f} realizado na conta {numero}.')
+            print(f'Crédito de R$ {valor:.2f} realizado na conta {numero}')
         else:
             print('Conta não encontrada.')
 
@@ -38,7 +38,7 @@ class Banco:
         if conta:
             if conta.saldo >= valor:
                 conta.saldo -= valor
-                print(f'Débito de R$ {valor:.2f} realizado na conta {numero}.')
+                print(f'Débito de R$ {valor:.2f} realizado na conta {numero}')
             else:
                 print('Saldo insuficiente.')
         else:
@@ -56,16 +56,16 @@ class Banco:
         conta_destino = self.procurar_conta(destino)
 
         if not conta_origem or not conta_destino:
-            print('Conta de origem ou destino não encontrada.')
+            print('Conta de origem ou destino não encontrada')
             return
 
         if conta_origem.saldo < valor:
-            print('Saldo insuficiente para transferência.')
+            print('Saldo insuficiente para transferência')
             return
 
         conta_origem.saldo -= valor
         conta_destino.saldo += valor
-        print(f'Transferência de R$ {valor:.2f} realizada de {origem} para {destino}.')
+        print(f'Transferência de R$ {valor:.2f} realizada de {origem} para {destino}')
 
 
 def menu():
@@ -112,7 +112,7 @@ def menu():
 
         elif opcao == '6':
             if not banco.contas:
-                print('Nenhuma conta cadastrada.')
+                print('Nenhuma conta cadastrada')
             else:
                 for conta in banco.contas:
                     print(conta)
@@ -122,7 +122,7 @@ def menu():
             break
 
         else:
-            print('Opção inválida. Tente novamente.')
+            print('Opção inválida. Tente novamente')
 
 
 if __name__ == '__main__':
